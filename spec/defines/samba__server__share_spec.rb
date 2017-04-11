@@ -217,11 +217,11 @@ describe 'samba::server::share', :type => :define do
         let(:change_set) { default_changes.with("directory mask", "'755'") }
       end
 
-      context 'with force_create_mask set to "755"' do
+      context 'with force_create_mode set to "755"' do
         include_examples "default share"
         let(:params) {{
           :ensure    => 'present',
-          :force_create_mask => '755',
+          :force_create_mode => '755',
         }}
         let(:change_set) { default_changes.with("force create mask", "'755'") }
       end

@@ -18,7 +18,7 @@ describe 'basic samba' do
         guest_account             => 'guest',
         browsable                 => false,
         create_mask               => 0777,
-        force_create_mask         => 0777,
+        force_create_mode         => 0777,
         directory_mask            => 0777,
         force_directory_mode      => 0777,
         force_group               => 'group',

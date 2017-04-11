@@ -6,7 +6,7 @@ Module for provisioning Samba
 
 Supports:
 
-* Ubuntu: 14.04, 12.04, 16.04 LTS 
+* Ubuntu: 14.04, 12.04, 16.04 LTS
 * Debian: 8.x, 7.x
 * CentOS: 7.x, 6.x
 
@@ -58,7 +58,7 @@ node 'server.example.com' {
     guest_account             => "guest",
     browsable                 => false,
     create_mask               => 0777,
-    force_create_mask         => 0777,
+    force_create_mode         => 0777,
     directory_mask            => 0777,
     force_directory_mask      => 0777,
     force_group               => 'group',
