@@ -11,6 +11,9 @@ define samba::server::share($ensure = present,
                             $force_directory_mode = '',
                             $force_group = '',
                             $force_user = '',
+                            $case_sensitive = '',
+                            $preserve_case = '',
+                            $short_preserve_case = '',
                             $guest_ok = '',
                             $guest_only = '',
                             $hide_unreadable = '',
@@ -105,6 +108,18 @@ define samba::server::share($ensure = present,
       $force_user ? {
         ''      => "rm  \"${target}/force user\"",
         default => "set \"${target}/force user\" '${force_user}'",
+      },
+      $case_sensitive ? {
+        ''      => "rm  \"${target}/case sensitive\"",
+        default => "set \"${target}/case sensitive\" '${case_sensitive}'",
+      },
+      $preserve_case ? {
+        ''      => "rm  \"${target}/preserve case\"",
+        default => "set \"${target}/preserve case\" '${preserve_case}'",
+      },
+      $short_preserve_case ? {
+        ''      => "rm  \"${target}/short preserve case\"",
+        default => "set \"${target}/short preserve case\" '${short_preserve_case}'",
       },
       $guest_ok ? {
         true    => "set \"${target}/guest ok\" yes",
